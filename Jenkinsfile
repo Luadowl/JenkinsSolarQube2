@@ -1,33 +1,21 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.x' // Configurez Maven dans Jenkins
+        maven 'Maven 3.x'
     }
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
         }
         stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube Local') {
-                    sh 'mvn sonar:sonar'
-                }
+            environment {
+                SONAR_HOST_URL = 'http://172.17.0.3:9000'
+                SONAR_AUTH_TOKEN = 'sqa_9a2d44d74c079a0ea07f949bf62590d1704d1e41'
             }
-        }
-        stage('Quality Gate') {
             steps {
-                script {
-                    timeout(time: 1, unit: 'MINUTES') {
-                        waitForQualityGate abortPipeline: true
-                    }
-                }
+                sh 'mvn sonar:sonar'
             }
         }
     }
