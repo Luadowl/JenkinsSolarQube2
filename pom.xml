@@ -20,7 +20,7 @@
 
         <!-- Configuration pour SonarQube -->
         <sonar.projectKey>com.example:my-app</sonar.projectKey> <!-- Clé unique pour SonarQube -->
-        <sonar.host.url>http://localhost:9000</sonar.host.url> <!-- Adresse du serveur SonarQube sur localhost -->
+        <sonar.host.url>http://172.17.0.2:9000</sonar.host.url> <!-- Adresse du serveur SonarQube sur l'IP du conteneur -->
 
         <!-- Version stable du plugin SonarQube -->
         <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
@@ -78,4 +78,5 @@
         </repository>
     </repositories>
 </project>
+
 
