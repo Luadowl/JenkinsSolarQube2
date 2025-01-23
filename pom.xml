@@ -26,7 +26,7 @@
         <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
 
         <!-- Ajout du token d'authentification -->
-        <sonar.login>VOTRE_TOKEN_ICI</sonar.login> <!-- Remplace VOTRE_TOKEN_ICI par ton token -->
+        <sonar.login>sqa_9a2d44d74c079a0ea07f949bf62590d1704d1e41</sonar.login> <!-- Remplace VOTRE_TOKEN_ICI par ton token -->
     </properties>
 
     <dependencies>
