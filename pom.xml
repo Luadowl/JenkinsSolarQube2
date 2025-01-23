@@ -22,8 +22,8 @@
         <sonar.projectKey>com.example:my-app</sonar.projectKey> <!-- Clé unique pour SonarQube -->
         <sonar.host.url>http://172.17.0.3:9000</sonar.host.url> <!-- Adresse du serveur SonarQube -->
 
-        <!-- Versions des plugins -->
-        <sonar.maven.plugin.version>7.0.0.4796</sonar.maven.plugin.version>
+        <!-- Version stable du plugin SonarQube -->
+        <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -69,4 +69,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <!-- Dépôt Maven Central -->
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
 </project>
+
