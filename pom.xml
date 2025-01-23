@@ -19,15 +19,17 @@
         <maven.compiler.target>11</maven.compiler.target>
 
         <!-- Configuration pour SonarQube -->
-        <sonar.projectKey>com.example:my-app</sonar.projectKey> <!-- Clé unique pour SonarQube -->
-        <sonar.host.url>http://172.17.0.2:9000</sonar.host.url> <!-- Adresse du serveur SonarQube sur l'IP du conteneur -->
+        <sonar.projectKey>com.example:my-app</sonar.projectKey>
+        <sonar.host.url>http://172.17.0.2:9000</sonar.host.url>
 
         <!-- Version stable du plugin SonarQube -->
         <sonar.maven.plugin.version>3.9.1.2184</sonar.maven.plugin.version>
+
+        <!-- Ajout du token d'authentification -->
+        <sonar.login>VOTRE_TOKEN_ICI</sonar.login> <!-- Remplace VOTRE_TOKEN_ICI par ton token -->
     </properties>
 
     <dependencies>
-        <!-- Exemple de dépendances -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -43,7 +45,6 @@
 
     <build>
         <plugins>
-            <!-- Plugin Compiler pour Java -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -54,7 +55,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin SonarQube -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
@@ -71,12 +71,12 @@
     </build>
 
     <repositories>
-        <!-- Dépôt Maven Central -->
         <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 </project>
+
 
 
